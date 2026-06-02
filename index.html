@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog Promove Imobiliária | Mercado Imobiliário em Ubatuba</title>
+<meta name="description" content="Análises de mercado, dicas de compra, financiamento e tudo sobre imóveis em Ubatuba e litoral norte de SP. Promove Imobiliária — CRECI/SP 38.509/J.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Blog Promove Imobiliária — Ubatuba">
+<meta property="og:description" content="Tudo sobre o mercado imobiliário de Ubatuba e litoral norte paulista.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://renatolopescreci-del.github.io/promove-blog/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --navy: #0d1f2d;
+    --navy-mid: #152a3e;
+    --amber: #c8873a;
+    --amber-light: #e8a85e;
+    --cream: #f5f0e8;
+    --cream-mid: #ede7da;
+    --text: #1a1a1a;
+    --text-light: #4a4a4a;
+    --rule: #c8873a44;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    background: var(--navy);
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+  .header-left { display: flex; align-items: center; gap: 12px; }
+  .brand {
+    color: var(--amber);
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .sep { color: #ffffff33; }
+  .section-label {
+    color: #ffffff66;
+    font-size: 13px;
+    font-style: italic;
+  }
+  .header-cta {
+    color: var(--amber);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid #c8873a55;
+    padding: 7px 16px;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .header-cta:hover { background: var(--amber); color: var(--navy); }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--navy);
+    padding: 72px 40px 64px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, #c8873a1a 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    color: var(--amber);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+  .hero-eyebrow::before,
+  .hero-eyebrow::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: var(--amber);
+    opacity: 0.5;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    margin-bottom: 20px;
+  }
+  .hero h1 em { font-style: italic; color: var(--amber-light); }
+  .hero-sub {
+    color: #ffffffaa;
+    font-size: 16px;
+    font-style: italic;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  /* ── POSTS GRID ── */
+  .posts-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 64px 40px 80px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--amber);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 28px;
+  }
+
+  .post-card {
+    background: #fff;
+    border: 1px solid var(--cream-mid);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+  }
+  .post-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(13,31,45,0.10);
+  }
+
+  .card-thumb {
+    background: var(--navy);
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .card-thumb::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 60% 40%, #c8873a22 0%, transparent 70%);
+  }
+  .card-thumb-icon {
+    font-size: 48px;
+    opacity: 0.15;
+    position: relative;
+  }
+  .card-category {
+    position: absolute;
+    bottom: 14px;
+    left: 16px;
+    background: var(--amber);
+    color: var(--navy);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 2px;
+  }
+
+  .card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+  .card-date {
+    color: var(--amber);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+  .card-excerpt {
+    color: var(--text-light);
+    font-size: 14px;
+    line-height: 1.65;
+    flex: 1;
+    margin-bottom: 20px;
+  }
+  .card-link {
+    color: var(--amber);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .card-link::after { content: '→'; }
+
+  /* ── NEWSLETTER ── */
+  .newsletter {
+    background: var(--navy);
+    padding: 56px 40px;
+    text-align: center;
+  }
+  .newsletter h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  .newsletter p {
+    color: #ffffffaa;
+    font-size: 15px;
+    margin-bottom: 28px;
+    font-style: italic;
+  }
+  .newsletter-form {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .newsletter-form input {
+    flex: 1;
+    min-width: 220px;
+    padding: 12px 18px;
+    border: 1px solid #c8873a55;
+    background: #ffffff11;
+    color: #fff;
+    font-family: 'Source Serif 4', serif;
+    font-size: 14px;
+    border-radius: 2px;
+    outline: none;
+  }
+  .newsletter-form input::placeholder { color: #ffffff55; }
+  .newsletter-form button {
+    background: var(--amber);
+    color: var(--navy);
+    border: none;
+    padding: 12px 24px;
+    font-family: 'Source Serif 4', serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .newsletter-form button:hover { background: var(--amber-light); }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    background: var(--navy-mid);
+    padding: 24px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .site-footer p { color: #ffffff44; font-size: 12px; }
+  .site-footer a { color: var(--amber); text-decoration: none; }
+
+  @media (max-width: 600px) {
+    .site-header { padding: 0 20px; }
+    .hero { padding: 48px 24px 40px; }
+    .posts-section { padding: 40px 20px 60px; }
+    .newsletter { padding: 40px 24px; }
+    .site-footer { padding: 20px 24px; flex-direction: column; text-align: center; }
+    .header-cta { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-left">
+    <a href="https://www.promoveimobiliaria.com.br" class="brand">Promove</a>
+    <span class="sep">·</span>
+    <span class="section-label">Blog Imobiliário</span>
+  </div>
+  <a href="https://api.whatsapp.com/send?phone=5512992102280" class="header-cta">Falar com corretor</a>
+</header>
+
+<section class="hero">
+  <div class="hero-eyebrow">Ubatuba · Litoral Norte SP</div>
+  <h1>Inteligência<br><em>Imobiliária</em></h1>
+  <p class="hero-sub">Análises de mercado, bairros, financiamento e oportunidades em Ubatuba — direto de quem vive o mercado há 15 anos.</p>
+</section>
+
+<section class="posts-section">
+  <div class="section-title">Artigos recentes</div>
+
+  <div class="posts-grid">
+
+    <!-- ARTIGO 1 -->
+    <a href="artigos/mercado-ubatuba-2026.html" class="post-card">
+      <div class="card-thumb">
+        <span class="card-thumb-icon">📈</span>
+        <span class="card-category">Análise de Mercado</span>
+      </div>
+      <div class="card-body">
+        <div class="card-date">Junho 2026</div>
+        <div class="card-title">Mercado Imobiliário em Ubatuba: Por que 2026 é o momento de agir</div>
+        <p class="card-excerpt">Juros altos assustam, mas quem entende o ciclo sabe que é exatamente nesse momento que as melhores compras acontecem. Veja os dados.</p>
+        <span class="card-link">Ler artigo</span>
+      </div>
+    </a>
+
+    <!-- PLACEHOLDER ARTIGO 2 -->
+    <div class="post-card" style="opacity:0.45; cursor:default;">
+      <div class="card-thumb">
+        <span class="card-thumb-icon">🏖️</span>
+        <span class="card-category">Bairros</span>
+      </div>
+      <div class="card-body">
+        <div class="card-date">Em breve</div>
+        <div class="card-title">Itaguá ou Praia Grande? Como escolher o bairro certo em Ubatuba</div>
+        <p class="card-excerpt">Uma análise comparativa dos dois bairros mais procurados — infraestrutura, valorização e perfil de morador.</p>
+        <span class="card-link">Em breve</span>
+      </div>
+    </div>
+
+    <!-- PLACEHOLDER ARTIGO 3 -->
+    <div class="post-card" style="opacity:0.45; cursor:default;">
+      <div class="card-thumb">
+        <span class="card-thumb-icon">💰</span>
+        <span class="card-category">Financiamento</span>
+      </div>
+      <div class="card-body">
+        <div class="card-date">Em breve</div>
+        <div class="card-title">Financiar ou pagar à vista? O que os números dizem para quem compra no litoral</div>
+        <p class="card-excerpt">Uma simulação real com os números de 2026 para ajudar você a decidir a melhor estratégia de compra.</p>
+        <span class="card-link">Em breve</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="newsletter">
+  <h2>Receba análises no seu WhatsApp</h2>
+  <p>Novos artigos, oportunidades e dados do mercado de Ubatuba — direto para você.</p>
+  <div class="newsletter-form">
+    <a href="https://api.whatsapp.com/send?phone=5512992102280&text=Quero receber análises do mercado imobiliário de Ubatuba" style="display:inline-block; background:var(--amber); color:var(--navy); font-family:'Source Serif 4',serif; font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; padding:14px 32px; border-radius:2px; text-decoration:none;">Entrar no grupo</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <p>© 2026 <a href="https://www.promoveimobiliaria.com.br">Promove Soluções Imobiliárias</a> — CRECI/SP 38.509/J</p>
+  <p>Rua Prof. Thomaz Galhardo, 935, Centro, Ubatuba/SP · (12) 99210-2280</p>
+</footer>
+
+</body>
+</html>
